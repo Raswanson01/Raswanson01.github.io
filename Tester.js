@@ -1,10 +1,10 @@
-var preload;
-var playuh;
+var stage;
 var bullets[];
+var playuh;
 
 function load() {
     //Load assets
-    preload = new createjs.LoadQueue(true);
+    var preload = new createjs.LoadQueue(true);
     preload.installPlugin(createjs.Sound);
     createjs.Sound.alternateExtensions = ["ogg"];
     preload.addEventListener("complete", init);
@@ -30,7 +30,10 @@ function load() {
 
 function init() {
 	stage = new createjs.Stage("canvas");
-	stage.addEventListener("mousedown", Player.createBullet);
+	playuh = player.Player(75, 300, 20);
+	stage.addChild(playuh);
+	
+	stage.addEventListener("mousedown", playuh.createBullet);
 	createjs.Ticker.setFPS(30);
 	createjs.Ticker.addEventListener("tick", tick);
 	setControls();
@@ -38,13 +41,12 @@ function init() {
 	var bg = new createjs.Bitmap(preload.getResult("Background"));
     	bg.setTransform(0, 0, 1, 1);
     	stage.addChild(bg);
-	
-	playuh = player.Player(75, 300, 20);
-	stage.addChild(playuh);
+			
 	stage.update();
 }
 
 function tick() 
 {
-	Player.movePlayer();
+	playuh.movePlayer();
+	stage.update();
 }
