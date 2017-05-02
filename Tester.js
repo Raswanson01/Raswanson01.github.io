@@ -1,5 +1,5 @@
 var stage;
-var bullets[];
+var bullets = [];
 var playuh;
 
 function load() {
