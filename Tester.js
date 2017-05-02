@@ -5,7 +5,7 @@ var playuh;
 
 function load() {
     //Load assets
-    var preload = new createjs.LoadQueue(true);
+    preload = new createjs.LoadQueue(true);
     preload.installPlugin(createjs.Sound);
     createjs.Sound.alternateExtensions = ["ogg"];
     preload.addEventListener("complete", init);
