@@ -101,7 +101,7 @@ function gameStateMenu() {
 function gameStateRunning()
 {
 
-} //TODO
+}
 function gameStatePaused()
 {
     var pauseText = new createjs.Text("PAUSED", "120px Arial", "#ffffff");
@@ -116,7 +116,7 @@ function gameStatePaused()
             stage.update();
         }
     }
-} //TODO
+} 
 function gameStateEnded()
 {
     var view = new createjs.Text("RESTART", "40px Arial", "#ffffff");
@@ -129,4 +129,4 @@ function gameStateEnded()
     con.addChild(circle);
     con.addChild(view);
     con.addEventListener("click", restart);
-} //TODO
+} 
