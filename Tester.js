@@ -1,5 +1,6 @@
 var preload;
 var playuh;
+var bullets[];
 
 function load() {
     //Load assets
@@ -29,7 +30,7 @@ function load() {
 
 function init() {
 	stage = new createjs.Stage("canvas");
-	stage.addEventListener("mousedown", Bullet.newBullet);
+	stage.addEventListener("mousedown", Player.createBullet);
 	createjs.Ticker.setFPS(30);
 	createjs.Ticker.addEventListener("tick", tick);
 	setControls();
@@ -38,9 +39,12 @@ function init() {
     	bg.setTransform(0, 0, 1, 1);
     	stage.addChild(bg);
 	
-	playuh = player.Player(75, 300);
+	playuh = player.Player(75, 300, 20);
 	stage.addChild(playuh);
 	stage.update();
 }
 
-function tick() {}
+function tick() 
+{
+	Player.movePlayer();
+}
