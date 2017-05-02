@@ -11,8 +11,8 @@
                 laser.stop();
             }
             var laser = createjs.Sound.play('Laser', createjs.Sound.INTERRUPT_NONE, 0, 0, 0, .5, 0);
+         this.speed = spd;
      }
 },
-    speed:0,
-    setSpeed:function(num) {this.speed = num; }
+    setSpeed:function(num) { this.speed = num; }
 };
