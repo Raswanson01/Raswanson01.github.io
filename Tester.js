@@ -48,6 +48,6 @@ function init() {
 
 function tick() 
 {
-	playuh.move();
+	player.move();
 	stage.update();
 }
