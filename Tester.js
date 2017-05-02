@@ -29,7 +29,7 @@ function load() {
 
 function init() {
 	stage = new createjs.Stage("canvas");
-	stage.addEventListener("mousedown", bullet.newBullet);
+	stage.addEventListener("mousedown", Bullet.newBullet);
 	createjs.Ticker.setFPS(30);
 	createjs.Ticker.addEventListener("tick", tick);
 	setControls();
