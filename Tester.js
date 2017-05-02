@@ -1,4 +1,5 @@
 var preload;
+var playuh;
 
 function load() {
     //Load assets
@@ -18,9 +19,9 @@ function load() {
  	{ id: "Explosion", src: "assets/Explosion.png" },
  	{ id: "EnemyEngine", src: "assets/EnemyEngine.png" },
  	{ id: "PlayerEngine", src: "assets/PlayerEngine.png" },
- 	//{ id: "Music", src: "/assets/WindSprite.mp3" },
- 	//{ id: "Blast", src: "/assets/Blast.mp3" },
- 	//{ id: "Laser", src: "/assets/Laser.mp3" }
+ 	{ id: "Music", src: "/assets/WindSprite.mp3" },
+ 	{ id: "Blast", src: "/assets/Blast.mp3" },
+ 	{ id: "Laser", src: "/assets/Laser.mp3" }
     ]);
 
     preload.load();
@@ -31,7 +32,11 @@ function init() {
 	createjs.Ticker.setFPS(30);
 	createjs.Ticker.addEventListener("tick", tick);
 	
-	var playuh = player.Player(75, 300);
+	var bg = new createjs.Bitmap(preload.getResult("Background"));
+    	bg.setTransform(0, 0, 1, 1);
+    	stage.addChild(bg);
+	
+	playuh = player.Player(75, 300);
 	stage.addChild(playuh);
 	stage.update();
 }
