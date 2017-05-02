@@ -31,6 +31,7 @@ function init() {
 	stage = new createjs.Stage("canvas");
 	createjs.Ticker.setFPS(30);
 	createjs.Ticker.addEventListener("tick", tick);
+	setControls();
 	
 	var bg = new createjs.Bitmap(preload.getResult("Background"));
     	bg.setTransform(0, 0, 1, 1);
