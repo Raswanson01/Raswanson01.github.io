@@ -17,5 +17,5 @@ var player = {
     rFire:false,
     dY:15,
     move:function () { this.y += this.dY; },
-    switchRapidFire:function() { player.rFire = !player.rFire; }
+    switchRapidFire:function() { this.rFire = !this.rFire; }
 }
