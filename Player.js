@@ -9,13 +9,11 @@ var player = {
 
         var playerImage = new createjs.Bitmap(preload.getResult("PlayerShip"));
         pShip.addChild(playerImage);
-        this.x = initX;
-        this.y = initY;
         
         return pShip;
     },   
-    x:0, 
-    y:0,
+    x:75, 
+    y:300,
     rFire:false,
     dY:15,
     move:function () { this.y += this.dY; },
