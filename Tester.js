@@ -1,3 +1,4 @@
+var preload;
 var stage;
 var bullets = [];
 var playuh;
