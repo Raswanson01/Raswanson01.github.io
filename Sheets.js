@@ -30,4 +30,5 @@ function makePEngine()
             "burn": [0, 2, "burn", 0.5]
         }
     });
+    return pEngine;
 }
