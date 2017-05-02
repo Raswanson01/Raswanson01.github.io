@@ -33,6 +33,7 @@ function init() {
 	
 	var playuh = player.Player(75, 300);
 	stage.addChild(playuh);
+	stage.update();
 }
 
 function tick() {}
