@@ -2,7 +2,7 @@ function Player(initX, initY, rFire, dy)
 {
     var player = new createjs.Container();
 
-    var burn = new createjs.Sprite(pEngine, "burn");
+    var burn = new createjs.Sprite(makePEngine, "burn");
     burn.set({ x: -20 });
     player.addChild(burn);
 
