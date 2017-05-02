@@ -1,19 +1,23 @@
 var player = {
-    buildPlayer:function(initX, initY, rFire, dy)
+    Player:function(initX, initY)
     {
-        var player = new createjs.Container();
+        var pShip = new createjs.Container();
 
         var burn = new createjs.Sprite(sheets.makePEngine(), "burn");
         burn.set({ x: -20 });
-        player.addChild(burn);
+        pShip.addChild(burn);
 
-        playerImage = new createjs.Bitmap(preload.getResult("PlayerShip"));
-        player.addChild(playerImage);
-
-        player.x = initX;
-        player.y = initY;
-        player.rapidFire = rFire;
-        player.dY = dy;
+        var playerImage = new createjs.Bitmap(preload.getResult("PlayerShip"));
+        pShip.addChild(playerImage);
+        this.x = initX;
+        this.y = initY;
+        
+        return pShip;
     },   
-    move:function (num) { player.x += num; }
+    x:0, 
+    y:0,
+    rFire:false,
+    dY:15,
+    move:function () { this.y += this.dY; },
+    switchRapidFire:function() { player.rFire = !player.rFire; }
 }
