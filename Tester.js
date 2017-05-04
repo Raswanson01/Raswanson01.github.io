@@ -34,7 +34,7 @@ function init() {
 	playuh = player.Player(75, 300, 20);
 	stage.addChild(playuh);
 	
-	stage.addEventListener("mousedown", playuh.createBullet);
+	stage.addEventListener("mousedown", Bullet.createBullet);
 	createjs.Ticker.setFPS(30);
 	createjs.Ticker.addEventListener("tick", tick);
 	setControls();
