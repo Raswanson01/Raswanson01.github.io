@@ -31,8 +31,6 @@ function load() {
 
 function init() {
 	stage = new createjs.Stage("canvas");
-	playuh = player.Player(75, 300, 20);
-	stage.addChild(playuh);
 	
 	stage.addEventListener("mousedown", Bullet.createBullet);
 	createjs.Ticker.setFPS(30);
@@ -42,6 +40,9 @@ function init() {
 	var bg = new createjs.Bitmap(preload.getResult("Background"));
     	bg.setTransform(0, 0, 1, 1);
     	stage.addChild(bg);
+	
+	playuh = player.Player(75, 300, 20);
+	stage.addChild(playuh);
 			
 	stage.update();
 }
