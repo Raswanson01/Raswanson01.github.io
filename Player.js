@@ -1,5 +1,5 @@
 var player = {
-    Player:function(initX, initY)
+    Player:function(initX, initY, dy)
     {
         var pShip = new createjs.Container();
 
@@ -10,12 +10,12 @@ var player = {
         var playerImage = new createjs.Bitmap(preload.getResult("PlayerShip"));
         pShip.addChild(playerImage);
         
+        this.x = initX;
+        this.y = initY;
+        this.dY = dy;
         return pShip;
-    },   
-    x:75, 
-    y:300,
+    },    
     rFire:false,
-    dY:15,
     move:function () { this.y += this.dY; },
     switchRapidFire:function() { this.rFire = !this.rFire; }
 }
