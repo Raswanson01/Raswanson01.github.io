@@ -51,14 +51,14 @@ function handleKeyDown(e) {
 }
 function handleKeyUp(e) {
     switch (e.keyCode) {
-        case SPACE_KEY:
+        case KeyInputs.SPACE_KEY:
             pauseGame();
             break;
-        case RAPID_FIRE_KEY: rapidFire = false;
+        case KeyInputs.RAPID_FIRE_KEY: rapidFire = false;
             break;
-        case ARROW_KEY_Up: upKey = false;
+        case KeyInputs.ARROW_KEY_Up: upKey = false;
             break;
-        case ARROW_KEY_Down: downKey = false;
+        case KeyInputs.ARROW_KEY_Down: downKey = false;
             break;
     }
 }
